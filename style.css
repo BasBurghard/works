@@ -1,0 +1,148 @@
+/* 1. Basis instellingen */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333333;
+    -webkit-font-smoothing: antialiased;
+    display: flex; 
+}
+
+/* 2. De Sidebar */
+header.sidebar {
+    width: 320px;
+    min-width: 320px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 60px 40px;
+    border-right: 1px solid #ffffff;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    background-color: white;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    line-height: 1.1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-bottom: 15px;
+}
+
+.nav-links a {
+    color: #be51bc;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* 3. De Content Zone */
+.content {
+    margin-left: 320px; 
+    width: 100%;
+}
+
+#works {
+    padding: 60px 5%;
+    max-width: 600px; /* Was 900px. Hoe lager dit getal, hoe kleiner de foto's op desktop. */
+    margin: 0; 
+}
+
+.project {
+    padding-bottom: 40px;
+}
+
+/* Tekst onder foto's DESKTOP */
+.project p {
+    padding-left: 20px; /* Hierdoor springt alleen de tekst in */
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+/* 4. De Foto's op desktop */
+.project-img {
+    width: 100%;          /* De foto vult de 'project' container van 550px */
+    max-width: 850px;     /* Extra veiligheid: nooit breder dan dit */
+    height: auto;
+    display: block;
+    margin-bottom: 0px;
+}
+
+/* 5. Footer */
+footer {
+    text-align: left;
+    padding: 60px 5%;
+    font-size: 0.9rem;
+    color: #6a0f9fa5;
+}
+
+/* =========================================
+   6. MOBIELE AANPASSINGEN
+   ========================================= */
+@media (max-width: 900px) {
+    body {
+        flex-direction: column; 
+    }
+
+    header.sidebar {
+        position: fixed; /* Blijft bovenin staan op mobiel */
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid #eeeeee;
+        display: block;
+    }
+
+    header h1 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .content {
+        padding-top: 140px; /* Ruimte voor de fixed header op mobiel */
+        margin-left: 0;
+    }
+
+    #works {
+        padding: 20px;
+    }
+
+    /* Tekst onder foto's MOBIEL */
+    .project p {
+        font-size: 0.9rem;  /* De gevraagde verkleining */
+        padding-left: 15px; /* Iets minder inspringing op smal scherm */
+        margin-top: 10px;
+    }
+}
