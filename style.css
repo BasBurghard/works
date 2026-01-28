@@ -4,15 +4,15 @@
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    font-size: 18px;
+    font-family:'Geist', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 350;
+    letter-spacing: none;
+    font-size: 15px;
     line-height: 1.4;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-    color: #333333;
+    color: #52414e;
     -webkit-font-smoothing: antialiased;
     display: flex; 
 }
@@ -34,14 +34,23 @@ header.sidebar {
 }
 
 header h1 {
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: -1px;
+    font-size: 1.6rem;
+    text-transform: none;
+    font-weight: 540;
+    letter-spacing: -px;
     margin-bottom: 20px;
     margin-top: 0;
     line-height: 1.1;
 }
-
+header h2 {
+    font-size: 1.2rem;
+    text-transform: none;
+    font-weight: 300;
+    letter-spacing: -px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    line-height: 1.1;
+}
 .nav-links {
     list-style: none;
     display: flex;
@@ -57,20 +66,112 @@ header h1 {
 .nav-links a {
     color: #be51bc;
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 700;
+    text-transform: None;
+    letter-spacing: 0em;
+    font-size: 1.6rem;
+    font-weight: 540;
+}
+
+/* 1. De standaard staat van je links */
+.nav-links a {
+    color: #be51bc; 
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease; /* Zorgt voor een zachte overgang */
+}
+
+/* 2. Het effect als je eroverheen hoovert */
+.nav-links a:hover {
+    color: #0b7951;    /* De kleur verandert naar zwart als je erover zweeft */
+    opacity: 0.7;      /* Maakt het iets transparanter voor een modern effect */
+
+}
+.nav-links a.active {
+    color: #ff90fd;      /* Verander dit naar zwart (of een andere kleur) */
+    font-weight: 600;    /* Maakt het extra duidelijk */
+    pointer-events: none; /* Zorgt dat je niet nog een keer op de link kunt klikken */
 }
 
 /* 3. De Content Zone */
 .content {
     margin-left: 320px; 
+    margin right: 10px;
     width: 100%;
 }
 
 #works {
     padding: 60px 5%;
-    max-width: 600px; /* Was 900px. Hoe lager dit getal, hoe kleiner de foto's op desktop. */
+    max-width: 850px; /* Was 900px. Hoe lager dit getal, hoe kleiner de foto's op desktop. */
     margin: 0; 
+}
+
+/* Extra stijlen voor de About pagina */
+#about-info {
+    padding: 60px 5%;
+    max-width: 700px; /* Houdt de tekst leesbaar */
+}
+
+#about-info h2 {
+    font-size: 1.5rem;
+    margin: 0px;
+    font-weight: 540;
+    letter-spacing: -0.05em;
+}
+
+
+
+.bio p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    margin-top: 2px;
+    color: #21002e;
+}
+
+.contact-section h3 {
+    font-size: 1.1rem;
+    text-transform: none;
+    letter-spacing;
+    margin-top: 1px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.contact-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-links li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.contact-links a {
+    color: #be51bc; /* Je kenmerkende paarse kleur */
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+    transition: color 0.3s ease, opacity 0.3s ease; /* Zorgt voor een zachte overgang */
+}
+
+/* 2. Het effect als je eroverheen hoovert */
+.contact-links a:hover {
+    color: #0b7951;    /* De kleur verandert naar zwart als je erover zweeft */
+    opacity: 0.7;      /* Maakt het iets transparanter voor een modern effect */
+
+}
+
+.contact-links a:hover {
+    border-bottom: 0px solid #be51bc;
+}
+
+
+/* Mobiele aanpassing voor de About tekst */
+@media (max-width: 850px) {
+    #about-info {
+        padding:  20px;
+    }
 }
 
 .project {
@@ -79,9 +180,12 @@ header h1 {
 
 /* Tekst onder foto's DESKTOP */
 .project p {
-    padding-left: 20px; /* Hierdoor springt alleen de tekst in */
-    font-size: 1.2rem;
-    margin-top: 15px;
+    text-align: right;
+     /* Hierdoor springt alleen de tekst in */
+    font-size: 1rem;
+    padding-right:  5px;
+    margin-top: 5px;
+    max-width: 850px;
 }
 
 /* 4. De Foto's op desktop */
@@ -115,6 +219,7 @@ footer {
         min-width: 100%;
         height: auto;
         padding: 20px;
+        padding-bottom: 0px;
         border-right: none;
         border-bottom: 1px solid #eeeeee;
         display: block;
@@ -127,11 +232,11 @@ footer {
 
     .nav-links {
         flex-direction: row;
-        gap: 15px;
+        gap: 30px;
     }
 
     .content {
-        padding-top: 140px; /* Ruimte voor de fixed header op mobiel */
+        padding-top: 100px; /* Ruimte voor de fixed header op mobiel */
         margin-left: 0;
     }
 
@@ -145,4 +250,6 @@ footer {
         padding-left: 15px; /* Iets minder inspringing op smal scherm */
         margin-top: 10px;
     }
+
+
 }
