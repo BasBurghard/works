@@ -94,7 +94,7 @@ header h2 {
 /* 3. De Content Zone */
 .content {
     margin-left: 320px; 
-    margin right: 10px;
+    margin-right: 10px;
     width: 100%;
 }
 
@@ -130,7 +130,6 @@ header h2 {
 .contact-section h3 {
     font-size: 1.1rem;
     text-transform: none;
-    letter-spacing;
     margin-top: 1px;
     margin-bottom: 15px;
     font-weight: 700;
